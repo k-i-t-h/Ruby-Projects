@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-
-
+  before_action :find_post, only: [:show, :update, :edit, :destroy]
+# @post = Post.find(params[:id]) has been initialized thats why they are commented out on the array on "before_action and the app still works!"
   def index
     @posts =Post.all.order("created_at DESC")
   end
@@ -19,12 +19,12 @@ class PostsController < ApplicationController
     end
   end
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
 
   def update
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
 
     if @post.update(post_params)
       redirect_to @post
@@ -34,11 +34,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @post.destroy
     
     redirect_to posts_path
@@ -49,4 +49,12 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content)
   end
 
+
+  def find_post
+   @post = Post.find(params[:id])  
+  end
+
 end
+
+
+
