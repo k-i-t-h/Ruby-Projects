@@ -35,7 +35,6 @@ end
 ########################################################################
 # ADDED GEMS 
 # Make errors better looking
-gem 'better_errors', '~> 2.5', '>= 2.5.1'
 
 # Bulma CSS
 gem 'bulma-rails', '~> 0.7.5'
@@ -55,7 +54,10 @@ group :development do
   # Guard is a command line tool to easily handle events on file system modifications.
   gem 'guard', '~> 2.15', '>= 2.15.1'
   # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
-  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2',  require: false 
+  #(bundle exec guard) Run this on CLI to start using LIVERELOAD and enable extension on Chrome! 
+
+  gem 'better_errors', '~> 2.5', '>= 2.5.1'
 end
 
 group :test do
