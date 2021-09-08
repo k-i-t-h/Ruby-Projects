@@ -57,7 +57,7 @@ group :development do
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2',  require: false 
   #(bundle exec guard) Run this on CLI to start using LIVERELOAD and enable extension on Chrome! 
 
-  gem 'better_errors', '~> 2.5', '>= 2.5.1'
+  gem 'better_errors', '~> 2.8'
 end
 
 group :test do
